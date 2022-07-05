@@ -7,7 +7,10 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
+import { ThemeProvider } from 'styled-components';
 import type { MetaFunction } from '@remix-run/node';
+
+import { theme } from '~/styles';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -26,7 +29,10 @@ const Root = () => {
       </head>
 
       <body>
-        <Outlet />
+        <ThemeProvider theme={theme}>
+          <Outlet />
+        </ThemeProvider>
+
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
