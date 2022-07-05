@@ -21,7 +21,10 @@ const Root = () => {
       <head>
         <Meta />
         <Links />
+
+        {typeof document === 'undefined' ? '__STYLES__' : null}
       </head>
+
       <body>
         <Outlet />
         <ScrollRestoration />
