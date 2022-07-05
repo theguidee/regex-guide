@@ -10,7 +10,7 @@ import {
 import { ThemeProvider } from 'styled-components';
 import type { MetaFunction } from '@remix-run/node';
 
-import { theme } from '~/styles';
+import { GlobalStyles, theme } from '~/styles';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -30,6 +30,7 @@ const Root = () => {
 
       <body>
         <ThemeProvider theme={theme}>
+          <GlobalStyles />
           <Outlet />
         </ThemeProvider>
 
