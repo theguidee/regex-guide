@@ -5,14 +5,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from '@remix-run/node';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Regex Guide",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'Regex Guide',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 const Root = () => {
@@ -30,6 +30,6 @@ const Root = () => {
       </body>
     </html>
   );
-}
+};
 
-export default Root
+export default Root;
