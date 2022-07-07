@@ -18,11 +18,12 @@ const defaultTheme = {
     },
 
     sizes: {
-      xsmall: '1.2rem',
-      small: '1.4rem',
-      medium: '1.6rem',
-      large: '2.0rem',
-      xlarge: '2.6rem',
+      xxsmall: '1.2rem',
+      xsmall: '1.4rem',
+      small: '1.6rem',
+      medium: '1.8rem',
+      large: '3.6rem',
+      xlarge: '5.2rem',
     },
   },
 
@@ -42,6 +43,7 @@ const defaultTheme = {
     medium: '1.6rem',
     large: '2.0rem',
     xlarge: '2.4rem',
+    xxlarge: '3.2rem',
   },
 };
 
