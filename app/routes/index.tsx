@@ -1,5 +1,7 @@
-const Index = () => {
-  return <h1>Ahhh... Hello?</h1>;
-};
+import { redirect } from '@remix-run/node';
+
+export const loader = () => redirect('/docs');
+
+const Index = () => null;
 
 export default Index;
