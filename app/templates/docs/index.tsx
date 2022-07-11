@@ -1,6 +1,6 @@
 import { Outlet } from '@remix-run/react';
 
-import { SideMenu } from '~/components';
+import { SideMenu, ContentTable } from '~/components';
 import * as S from './styles';
 
 type NavLink = {
@@ -19,11 +19,11 @@ const DocsTemplate = ({ navLinks }: DocsTemplateType) => {
       <S.Wrapper>
         <SideMenu navLinks={navLinks} />
 
-        <S.Content>
+        <S.Content className="content">
           <Outlet />
         </S.Content>
 
-        <div />
+        <ContentTable />
       </S.Wrapper>
     </S.Container>
   );
