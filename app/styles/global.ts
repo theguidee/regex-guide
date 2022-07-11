@@ -73,6 +73,7 @@ const GlobalStyles = createGlobalStyle`
     body {
       background: ${theme.colors.bg};
       padding: ${theme.spacings.xlarge};
+      overflow-y: scroll;
 
       &::-webkit-scrollbar {
         width: 1.2rem;
