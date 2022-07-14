@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: grid;
     grid-template-columns: 28rem minmax(0px, 70rem) 28rem;
-    column-gap: ${theme.spacings.medium};
+    column-gap: ${theme.spacings.xxlarge};
   `}
 `;
 
