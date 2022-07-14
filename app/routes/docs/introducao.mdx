@@ -8,21 +8,40 @@ menu:
   position: 1
 ---
 
-import { Code, Heading } from '~/components/content'
+import { Code, Heading, CustomBlock } from '~/components/content'
 
 <Heading>Introdução</Heading>
 
-Seja muito bem vindo a essa documentação não oficial de **expresões regulares!** Aqui você vai aprender tudo o que precisa para dominar o **Regex** 🎉
+Seja muito bem vindo a essa documentação não oficial de **expresões regulares!** Aqui você vai aprender tudo o que precisa para dominar a **Regex** 🎉
 
 Então, para dar inicio a nossa jornada, vamos começar respondendo o que são **expressões regulares!**
 
 <Heading as="h2">O que é uma expressão regular?</Heading>
 
-Para me ajudar a responder essa pergunta, vou pegar uma frase que foi escrita no livro [Expressões Regulares - Uma abordagem divertida]() que explica de uma forma bem resumida o que são **expressões regulares.**
+**Expressões regulares** são uma composição de símbolos e/ou caracteres especiais e/ou literais, que juntos formam uma sequência, um padrão de texto.
 
-<blockquote cite="">Bem resumido, uma expressão regular é um método formal de se especificar um padrão de texto.</blockquote>
+Elas compostas em duas partes, a primeira é onde escrevemos o nosso padrão, e a segunda parte é onde podemos colocar algumas flags.
 
-**Expressões regulares** são uma composição de símbolos e/ou caracteres especiais/literais, que juntos formar uma sequência, um padrão.
+<CustomBlock>
+Para os exemplos, iremos utilizar a linguagem do Javascript. Vale lembrar também que os conceitos aprendidos aqui sobre regex independem do tipo de linguagem que você estiver trabalhando.
+</CustomBlock>
+
+Quando vamos criar uma **regex**, podemos fazer de duas formas, usando o construtor `RegExp` ou usando uma short syntax,.
+
+<Code language="js">
+
+```js
+// Utilizando o contrutor
+
+const regex = new RegExp('padrão', 'flags');
+
+// Utilizando a short syntax
+
+const regexp = /padrão/; // sem flags
+const regexp = /padrão/gmi; // com as flags g, m e i
+```
+
+</Code>
 
 <Heading as="h2">Para que serve?</Heading>
 
