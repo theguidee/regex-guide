@@ -6,11 +6,15 @@ import type { LoaderFunction } from '@remix-run/node';
 
 import { fs, path } from '~/utils/node.server';
 import { DocsTemplate } from '~/templates';
+import { sort } from '~/utils/sort';
 
 type NavLink = {
+  id: string;
   label: string;
   position: number;
   link: string;
+  parent?: string;
+  children: NavLink[];
 };
 
 type LoaderData = {
@@ -37,15 +41,36 @@ export const loader: LoaderFunction = async ({ request }) => {
 
         const { data } = matter(mdContent);
 
-        return { ...data.menu, link: `/docs/${file}` };
+        return { id: file, ...data.menu, link: `/docs/${file}` };
       })
     )
-  ).sort((a, b) => {
-    if (a.position > b.position) return 1;
-    if (a.position < b.position) return -1;
+  )
+    .sort(a => (a.parent ? 1 : -1))
+    .reduce((arr, navLink) => {
+      if (navLink.parent) {
+        return arr.map(item => {
+          if (navLink.parent === item.id)
+            return {
+              ...item,
+              children: [...(item.children ?? []), navLink],
+            };
 
-    return 0;
-  });
+          return item;
+        });
+      }
+
+      return [...arr, navLink];
+    }, [] as NavLink[])
+    .sort(sort<NavLink>('position'))
+    .map(navLink => {
+      if (navLink.children)
+        return {
+          ...navLink,
+          children: navLink.children.sort(sort<NavLink>('position')),
+        };
+
+      return navLink;
+    });
 
   return {
     navLinks,

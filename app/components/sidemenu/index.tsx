@@ -3,9 +3,10 @@ import { Link } from '@remix-run/react';
 import * as S from './styles';
 
 type NavLink = {
+  id: string;
   label: string;
-  position: number;
   link: string;
+  children: NavLink[];
 };
 
 type SideMenuProps = {
@@ -13,13 +14,23 @@ type SideMenuProps = {
 };
 
 const SideMenu = ({ navLinks }: SideMenuProps) => {
+  const renderLinks = (links: NavLink[] = navLinks) => {
+    return (
+      <S.ListWrapper>
+        {links.map(link => (
+          <S.ListItem key={link.id}>
+            <Link to={link.link}>{link.label}</Link>
+
+            {link.children && renderLinks(link.children)}
+          </S.ListItem>
+        ))}
+      </S.ListWrapper>
+    );
+  };
+
   return (
     <S.Container>
-      {navLinks.map(link => (
-        <Link key={link.link} to={link.link}>
-          {link.label} <br />
-        </Link>
-      ))}
+      <nav>{renderLinks()}</nav>
     </S.Container>
   );
 };
