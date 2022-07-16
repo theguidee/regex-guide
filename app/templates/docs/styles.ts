@@ -28,7 +28,8 @@ export const Content = styled.div`
       margin-bottom: ${theme.spacings.medium};
     }
 
-    p {
+    p,
+    ul {
       margin-block: ${theme.spacings.small};
     }
 
