@@ -90,16 +90,19 @@ A flag `s` assim como a `m`, altera o comportamento de um meta caractere, que no
 <Code language="js">
 
 ```js
-const regex = /.+/g
-const regexDotAll = /.+/gs
+const regex = /.+/
+const regexDotAll = /.+/s
 
 const text = `
   Tem uma mensagem aqui
   Tem outra mensagem aqui
-`
+`.trim()
 
-console.log(text.match(regex).length) // 2
-console.log(text.match(regexDotAll).length) // 1
+console.log(text.match(regex))
+// [`Tem uma mensagem aqui`]
+
+console.log(text.match(regexDotAll))
+// ['Tem uma mensagem aqui\nTem outra mensagem aqui']
 ```
 
 </Code>
