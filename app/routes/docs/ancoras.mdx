@@ -1,0 +1,84 @@
+---
+meta:
+  title: Regex - Âncoras
+  description:
+
+menu:
+  parent: meta-caracteres
+  label: Âncoras
+  position: 3
+---
+
+import { Link } from '@remix-run/react';
+import { Heading, Code, CustomBlock } from '~/components/content'
+
+<Heading>Âncoras</Heading>
+
+<Heading as="h2">Circunflexo - &#94;</Heading>
+
+O meta caracter `^` serve para indicar que o nosso padrão deve realizar a busca logo no início do texto, e ele deve ser utilizado no início da rexeg para ter efeito.
+
+<CustomBlock>
+A <a href="/docs/flags#m" target="_blank">flag m</a> altera um pouco o comportamento do `^`.
+</CustomBlock>
+
+<Code language="js">
+
+```js
+const regex = /^[0-9]/
+
+const text = '1 dos recados'
+const text2 = 'Em 1 time'
+
+console.log(regex.test(text)) // true
+console.log(regex.test(text2)) // false
+```
+
+</Code>
+
+<Heading as="h2">Cifrão - &#36;</Heading>
+
+O meta caracter `$` tem o mesmo propósito que o `^`, porém ele vai realizar as buscar a partir do final da linha, e ele deve ser utilizado no final da rexeg para ter efeito.
+
+<CustomBlock>
+A <a href="/docs/flags#m" target="_blank">flag m</a> altera um pouco o comportamento do `$`.
+</CustomBlock>
+
+<Code language="js">
+
+```js
+const regex = /s$/
+
+const text = 'recados'
+const text2 = 'sim'
+
+console.log(regex.test(text)) // true
+console.log(regex.test(text2)) // false
+```
+
+</Code>
+
+<Heading as="h2">Borda - &#92;b</Heading>
+
+O meta caracter `\b` serve para indicar os limites de uma palavra, podendo definir o seu começo e fim.
+
+<Code language="js">
+
+```js
+const regex = /\bde\b/g
+const regex2 = /de/g
+
+const text = 'dezembro de 2020'
+
+console.log(text.match(regex)) // ['de']
+console.log(text.match(regex2)) // ['de', 'de']
+```
+
+</Code>
+
+Na primeira regex, temos uma borda (`\b`), as letras `d` e `e` e novamente a borda, isso significa o sequinte, que estamos fazendo uma busca por palavras que começem com `d` e terminem com `e`.
+
+No nosso texto, temos apenas uma aparição desse padrão, (`dezembro *de* 2020`).
+
+Já na segunda regex, estamos procurando apenas pela ocorrência da letra `d` seguida de `e`, que ocorre duas vezes no texto, (`*de*zembro *de* 2020`).
+
