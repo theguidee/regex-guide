@@ -16,7 +16,7 @@ import { Heading, Code } from '~/components/content'
 
 <Heading as="h2">Ponto - &#46;</Heading>
 
-O meta caracter ponto `.` é utilizado para representar qualquer coisa, qualquer caracter, exeto quebra de linha (porém esse comportamento pode ser alterado com a <Link to="/docs/flags#s">flag <code>s</code></Link>).
+O meta caractere ponto `.` é utilizado para representar qualquer coisa, qualquer caractere, exceto quebra de linha (porém esse comportamento pode ser alterado com a <Link to="/docs/flags#s">flag <code>s</code></Link>).
 
 <Code language="js">
 
@@ -32,9 +32,9 @@ console.log(text.match(regex2)) // ['T', 'e', 'x', 't', 'o', ' ', 'a']
 
 </Code>
 
-Na primeira **regex**, o nosso padrão especificado era o `.`, então na hora do match, ele apenas buscou pelo primeiro caracter que encontrase.
+Na primeira **regex**, o nosso padrão especificado era o `.`, então na hora do match, ele apenas buscou pelo primeiro caractere que encontra-se.
 
-Já no segundo exemplo, o padrão é o mesmo, porém com o adicional da flag `g`, agora a procura sera por qualquer caracter que não seja a quebra de linha.
+Já no segundo exemplo, o padrão é o mesmo, porém com o adicional da flag `g`, agora a procura sera por qualquer caractere que não seja a quebra de linha.
 
 <Heading as="h2">Listas - 	&#91;&#46;&#46;&#46;&#93;</Heading>
 
@@ -56,7 +56,7 @@ console.log(regex.test(text3)); // false
 
 </Code>
 
-O nosso padrão especifícado é a letra `n`, que pode ser seguido tanto pelo `a` ou `ã` e depois seguido pelo `o`. Nesse caso, a nossa **regex** só dara match com `nao` ou `não`.
+O nosso padrão especificado é a letra `n`, que pode ser seguido tanto pelo `a` ou `ã` e depois seguido pelo `o`. Nesse caso, a nossa **regex** só dará match com `nao` ou `não`.
 
 Um outro exemplo da utilização da lista pode ser observado no <Link to="/docs/introducao##1">primeiro exemplo prático</Link> apresentado na introdução.
 

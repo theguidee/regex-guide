@@ -15,7 +15,7 @@ import { Heading, Code } from '~/components/content'
 
 <Heading as="h2">Opcional - &#63;</Heading>
 
-O meta caracteres `?` tornar o caracter ou expressão anterior a ele opcional, ou seja, pode ou não aparecer.
+O meta caracteres `?` tornar o caractere ou expressão anterior a ele opcional, ou seja, pode ou não aparecer.
 
 <Code language="js">
 
@@ -49,11 +49,11 @@ console.log(regex.test(text3)) // true
 
 </Code>
 
-Agora, estamos procurando pelo seguinte padrão, primeiro temos a seguência `fala`, depois temos uma lista, falando que pode ter o `r` ou o `!`, e ela também é opcional.
+Agora, estamos procurando pelo seguinte padrão, primeiro temos a sequência `fala`, depois temos uma lista, falando que pode ter o `r` ou o `!`, e ela também é opcional.
 
 <Heading as="h2">Asterisco - &#42;</Heading>
 
-O astericos `*` significa que o caractere ou a expressão anterior a ele pode aparecer repetidas vezes ou não.
+O asteriscos `*` significa que o caractere ou a expressão anterior a ele pode aparecer repetidas vezes ou não.
 
 <Code language="js">
 
@@ -73,7 +73,7 @@ console.log(regex.test(text3)) // true
 
 <Heading as="h2">Mais - +</Heading>
 
-O mais `+` é bem parecido com o asterisco, porém sem a parte opcional, ou seja, o caracterer ou expressão em que o mais for aplicado presica aparecer pelo menos uma vez para que o match aconteça.
+O mais `+` é bem parecido com o asterisco, porém sem a parte opcional, ou seja, o caractere ou expressão em que o mais for aplicado precisa aparecer pelo menos uma vez para que o match aconteça.
 
 <Code language="js">
 
@@ -93,7 +93,7 @@ console.log(regex.test(text3)) // true
 
 <Heading as="h2">Chaves - &#x7B;n, m&#x7D;</Heading>
 
-As chaves `{}` servem para podermos especificar quantas vezes queremos que o caracter ou expressão se repita. Podemos trabalhar com as chaves de diversas formas:
+As chaves `{}` servem para podermos especificar quantas vezes queremos que o caractere ou expressão se repita. Podemos trabalhar com as chaves de diversas formas:
 
 - `{1,3}` - De uma a três repetições;
 - `{0,3}` - Até três repetições;
